@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlaskWebsite\templates\realtime-voice.html" />
-    <Content Include="ReadMe.md" />
     <Content Include="requirements.txt" />
     <Content Include="FlaskWebsite\static\content\bootstrap.css" />
     <Content Include="FlaskWebsite\static\content\bootstrap.min.css" />
