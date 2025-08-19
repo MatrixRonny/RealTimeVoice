@@ -361,4 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/RealTimeVoice/main-env
+
+### End of Visual Studio gitignore template ###
+
+config_dev.py
+main-env

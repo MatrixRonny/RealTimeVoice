@@ -28,46 +28,49 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="config.py" />
+    <Compile Include="config_dev.py" />
     <Compile Include="runserver.py" />
-    <Compile Include="RealTimeVoice\__init__.py" />
-    <Compile Include="RealTimeVoice\views.py" />
+    <Compile Include="FlaskWebsite\__init__.py" />
+    <Compile Include="FlaskWebsite\views.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RealTimeVoice\" />
-    <Folder Include="RealTimeVoice\static\" />
-    <Folder Include="RealTimeVoice\static\content\" />
-    <Folder Include="RealTimeVoice\static\fonts\" />
-    <Folder Include="RealTimeVoice\static\scripts\" />
-    <Folder Include="RealTimeVoice\templates\" />
+    <Folder Include="FlaskWebsite\" />
+    <Folder Include="FlaskWebsite\static\" />
+    <Folder Include="FlaskWebsite\static\content\" />
+    <Folder Include="FlaskWebsite\static\fonts\" />
+    <Folder Include="FlaskWebsite\static\scripts\" />
+    <Folder Include="FlaskWebsite\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FlaskWebsite\templates\realtime-voice.html" />
     <Content Include="requirements.txt" />
-    <Content Include="RealTimeVoice\static\content\bootstrap.css" />
-    <Content Include="RealTimeVoice\static\content\bootstrap.min.css" />
-    <Content Include="RealTimeVoice\static\content\site.css" />
-    <Content Include="RealTimeVoice\static\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="RealTimeVoice\static\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="RealTimeVoice\static\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="RealTimeVoice\static\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="RealTimeVoice\static\scripts\bootstrap.js" />
-    <Content Include="RealTimeVoice\static\scripts\bootstrap.min.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery-1.10.2.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery-1.10.2.min.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery-1.10.2.min.map" />
-    <Content Include="RealTimeVoice\static\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery.validate.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery.validate.min.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="RealTimeVoice\static\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="RealTimeVoice\static\scripts\modernizr-2.6.2.js" />
-    <Content Include="RealTimeVoice\static\scripts\respond.js" />
-    <Content Include="RealTimeVoice\static\scripts\respond.min.js" />
-    <Content Include="RealTimeVoice\static\scripts\_references.js" />
-    <Content Include="RealTimeVoice\templates\about.html" />
-    <Content Include="RealTimeVoice\templates\contact.html" />
-    <Content Include="RealTimeVoice\templates\index.html" />
-    <Content Include="RealTimeVoice\templates\layout.html" />
+    <Content Include="FlaskWebsite\static\content\bootstrap.css" />
+    <Content Include="FlaskWebsite\static\content\bootstrap.min.css" />
+    <Content Include="FlaskWebsite\static\content\site.css" />
+    <Content Include="FlaskWebsite\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="FlaskWebsite\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FlaskWebsite\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="FlaskWebsite\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="FlaskWebsite\static\scripts\bootstrap.js" />
+    <Content Include="FlaskWebsite\static\scripts\bootstrap.min.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery-1.10.2.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="FlaskWebsite\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery.validate.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery.validate.min.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="FlaskWebsite\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="FlaskWebsite\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="FlaskWebsite\static\scripts\respond.js" />
+    <Content Include="FlaskWebsite\static\scripts\respond.min.js" />
+    <Content Include="FlaskWebsite\static\scripts\_references.js" />
+    <Content Include="FlaskWebsite\templates\about.html" />
+    <Content Include="FlaskWebsite\templates\contact.html" />
+    <Content Include="FlaskWebsite\templates\index.html" />
+    <Content Include="FlaskWebsite\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="main-env\">
