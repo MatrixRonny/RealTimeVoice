@@ -4,9 +4,11 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import Response, render_template, jsonify, session
-from RealTimeVoice import app
+from FlaskWebsite import app
 import os
 import requests
+
+from config_dev import OPENAI_API_KEY
 
 @app.route('/')
 @app.route('/home')
@@ -42,9 +44,8 @@ def about():
 def get_token():
     """Retrieve ephemeral session token from OpenAI."""
 
-    openai_api_key = os.environ.get('OPENAI_API_KEY')
     headers = {
-        'Authorization': f'Bearer {openai_api_key}',
+        'Authorization': f'Bearer {OPENAI_API_KEY}',
         'Content-Type': 'application/json'
     }
     payload = {
@@ -59,6 +60,9 @@ def get_token():
         json=payload
     )
     data = r.json()
-    session_token = data.client_secret.value
+    session_token = data['client_secret']['value']
     return Response(session_token, mimetype='text/plain')
 
+@app.route('/realtime-voice')
+def realtime_voice():
+    return render_template('realtime-voice.html')

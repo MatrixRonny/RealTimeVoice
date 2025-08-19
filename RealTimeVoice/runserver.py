@@ -3,7 +3,7 @@ This script runs the RealTimeVoice application using a development server.
 """
 
 from os import environ
-from RealTimeVoice import app
+from FlaskWebsite import app
 
 from config_dev import *
 
@@ -14,7 +14,9 @@ if __name__ == '__main__':
     except ValueError:
         PORT = 5555
 
-    if(environ.get('OPENAI_API_KEY') is None or environ.get('OPENAI_API_KEY') == ''):
+    if(OPENAI_API_KEY is None or OPENAI_API_KEY == ""):
         raise ValueError("OPENAI_API_KEY environment variable is not set or is empty.")
+
+    environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
     app.run(HOST, PORT)

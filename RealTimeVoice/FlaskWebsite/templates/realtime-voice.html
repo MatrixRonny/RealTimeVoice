@@ -3,7 +3,6 @@
     <title>OpenAI Realtime Voice</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@openai/realtime@latest/dist/realtime.js"></script>
 
     <style>
         .voice-text-container {
@@ -24,7 +23,8 @@
         }
 
         textarea[readonly] {
-            resize: none;
+            resize: vertical;
+            overflow-y: auto;
             width: 100%;
             height: 150px;
             font-size: 1em;
@@ -33,7 +33,8 @@
         }
     </style>
 </head>
-<body onload="init()">
+
+<body onload="startVoiceChatOverWebRTC()">
     <h1>OpenAI Realtime Voice</h1>
     <p>This example shows how to use OpenAI's Realtime Voice API to stream audio from your microphone and receive audio responses from the model.</p>
 
@@ -53,9 +54,8 @@
 <script>
     async function startVoiceChatOverWebRTC() {
         // Get an ephemeral key from your server - see server code below
-        const tokenResponse = await fetch("/session");
-        const data = await tokenResponse.json();
-        const EPHEMERAL_KEY = data.client_secret.value;
+        const tokenResponse = await fetch("/get-token");
+        const sessionToken = await tokenResponse.text();
 
         // Create a peer connection
         const pc = new RTCPeerConnection();
@@ -76,6 +76,8 @@
         dc.addEventListener("message", (e) => {
             // Realtime server events appear here!
             console.log(e);
+
+
         });
 
         // Start the session using the Session Description Protocol (SDP)
@@ -88,7 +90,7 @@
             method: "POST",
             body: offer.sdp,
             headers: {
-                Authorization: `Bearer ${EPHEMERAL_KEY}`,
+                Authorization: `Bearer ${sessionToken}`,
                 "Content-Type": "application/sdp"
             },
         });

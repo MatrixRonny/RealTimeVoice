@@ -18,6 +18,7 @@
     <Name>RealTimeVoice</Name>
     <RootNamespace>RealTimeVoice</RootNamespace>
     <InterpreterId>MSBuild|main-env|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserPort>49555</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
