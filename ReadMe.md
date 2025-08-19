@@ -19,3 +19,4 @@ Some notes about the current version:
 * Transcription is written automatically for both user and AI assistant.
 * To clear the text, click on the address bar and press Enter.
 * This is a minimal implementation in Python using Flask.
+* Project can be build using other IDE or command line.
