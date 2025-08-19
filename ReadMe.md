@@ -1,4 +1,19 @@
 To start testing with this code, you need an OpenAI paid subscription.
 
-Follow these steps:
-* 
+Follow these steps to configure and run the application.
+1. [Create new OpenAI project](https://help.openai.com/en/articles/9186755-managing-projects-in-the-api-platform)
+2. [Create API Key](https://help.openai.com/en/articles/8867743-assign-api-key-permissions)
+3. Install [Visual Studio 2022 Community](https://visualstudio.microsoft.com/vs/community/) with Python development component.
+4. Open the `RealTimeVoice.sln` found in the root of the Git repo.
+5. Copy and rename `config.py` to `config_dev.py`.
+6. Fill in the OpenAI API Key obtained at step 2.
+7. Ensure your system can output and record audio.
+8. Start the application from Visual Studio by pressing the play button in the top-middle.
+9. Navigate to https://localhost:49555/realtime-voice
+10. Disable JavaScript blockers or add exception for current tab.
+
+Some notes about the current version:
+* The AI is configured to hold an English conversation.
+* Transcription is written automatically for both user and AI assistant.
+* To clear the text, click on the address bar and press Enter.
+* This is a minimal implementation in Python using Flask.
