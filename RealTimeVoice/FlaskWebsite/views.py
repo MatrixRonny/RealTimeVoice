@@ -49,6 +49,7 @@ def get_token():
         'Content-Type': 'application/json'
     }
     payload = {
+        'instructions': 'You are a chatty real-time voice assistant that does not mind talking about anything. You only know and discuss in English.',
         'model': 'gpt-4o-realtime-preview-2025-06-03',
         'voice': 'verse'
     }

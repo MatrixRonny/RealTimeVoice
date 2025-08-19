@@ -73,12 +73,7 @@
 
         // Set up data channel for sending and receiving events
         const dc = pc.createDataChannel("oai-events");
-        dc.addEventListener("message", (e) => {
-            // Realtime server events appear here!
-            console.log(e);
-
-
-        });
+        dc.addEventListener("message", processWebRTCMessage);
 
         // Start the session using the Session Description Protocol (SDP)
         const offer = await pc.createOffer();
@@ -100,5 +95,38 @@
             sdp: await sdpResponse.text(),
         };
         await pc.setRemoteDescription(answer);
+    }
+
+    function processWebRTCMessage(event) {
+        // Realtime server events appear here!
+        console.log(event);
+
+        try {
+            const dataObject = JSON.parse(event.data);
+
+            // Check if message is a complete user or AI response.
+            if (dataObject.type === 'response.done') {
+                for (const output of dataObject.response.output) {
+                    let role = output.role;
+
+                    let text = '';
+                    // Assuming output.content is an array of objects with a 'transcript' property
+                    for (const content of output.content) {
+                        text += (content.transcript || '') + "\n";
+                    }
+
+                    // Determine if the message is from the user or AI
+                    if (role === 'user') {
+                        const userTextArea = document.getElementById("userVoiceText");
+                        if (userTextArea) userTextArea.value += text;
+                    } else if (role === 'assistant') {
+                        const aiTextArea = document.getElementById("aiVoiceText");
+                        if (aiTextArea) aiTextArea.value += text;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error("Failed to parse message data:", err);
+        }
     }
 </script>
