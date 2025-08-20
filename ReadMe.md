@@ -6,13 +6,20 @@ Follow these steps to configure and run the application.
 3. [Create API Key](https://help.openai.com/en/articles/8867743-assign-api-key-permissions)
 4. Install [Visual Studio 2022 Community](https://visualstudio.microsoft.com/vs/community/) with Python development component.
 5. Open the `RealTimeVoice.sln` found in the root of the Git repo.
-6. Agree to install missing Python packages found in `requirements.txt`.
-7. Copy and rename `config.py` to `config_dev.py`.
-8. Fill in the OpenAI API Key obtained at step 2.
-9. Ensure your system can output and record audio.
-10. Start the application from Visual Studio by pressing the play button in the top-middle.
-11. Navigate to https://localhost:49555/realtime-voice
-12. Disable JavaScript blockers or add exception for current tab.
+6. Regenerate `main-env` using the GUI or command `python -m venv main-env`.
+7. Reload project if `main-env` was regenerated from command line.
+8. Agree to install missing Python packages found in `requirements.txt`.
+9. Copy and rename `config.py` to `config_dev.py`.
+10. Fill in the OpenAI API Key obtained at step 2.
+11. Ensure your system can output and record audio.
+12. Start the application from Visual Studio by pressing the play button in the top-middle.
+13. Navigate to http://localhost:49555/realtime-voice
+14. Disable JavaScript blockers or add exception for current tab.
+
+Alternatively, you can start the project from the command line:
+1. Install requriements with `pip install -r requirements.txt`.
+2. Run the Flask application with `python runserver.py`.
+3. Open `http://localhost:5555` in your browser.
 
 Some notes about the current version:
 * The AI is configured to hold an English conversation.
