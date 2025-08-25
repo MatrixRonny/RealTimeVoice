@@ -32,6 +32,7 @@
     <Compile Include="runserver.py" />
     <Compile Include="FlaskWebsite\__init__.py" />
     <Compile Include="FlaskWebsite\views.py" />
+    <Compile Include="scripts\install_types.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FlaskWebsite\" />
@@ -40,6 +41,7 @@
     <Folder Include="FlaskWebsite\static\fonts\" />
     <Folder Include="FlaskWebsite\static\scripts\" />
     <Folder Include="FlaskWebsite\templates\" />
+    <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlaskWebsite\templates\realtime-voice.html" />
@@ -70,6 +72,7 @@
     <Content Include="FlaskWebsite\templates\contact.html" />
     <Content Include="FlaskWebsite\templates\index.html" />
     <Content Include="FlaskWebsite\templates\layout.html" />
+    <Content Include="scripts\run_mypy.bat" />
     <Content Include="setup_dev-bak.cfg" />
     <Content Include="setup.cfg" />
   </ItemGroup>
@@ -87,7 +90,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
        AfterBuild targets below. -->
-  <Target Name="BeforeBuild">
+  <Target Name="BeforeBuild" Condition=" '$(OS)' == 'Windows_NT' ">
+    <Exec Command="scripts\run_mypy.bat" />
   </Target>
   <Target Name="AfterBuild">
   </Target>
