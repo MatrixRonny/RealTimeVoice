@@ -364,5 +364,6 @@ FodyWeavers.xsd
 
 ### End of Visual Studio gitignore template ###
 
-config_dev.py
+setup_dev.cfg
 main-env
+*-bak.*

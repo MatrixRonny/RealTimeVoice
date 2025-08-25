@@ -29,8 +29,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="config.py" />
-    <Compile Include="config_dev.py" />
     <Compile Include="runserver.py" />
     <Compile Include="FlaskWebsite\__init__.py" />
     <Compile Include="FlaskWebsite\views.py" />
@@ -72,6 +70,8 @@
     <Content Include="FlaskWebsite\templates\contact.html" />
     <Content Include="FlaskWebsite\templates\index.html" />
     <Content Include="FlaskWebsite\templates\layout.html" />
+    <Content Include="setup_dev-bak.cfg" />
+    <Content Include="setup.cfg" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="main-env\">
