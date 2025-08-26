@@ -27,3 +27,6 @@ Some notes about the current version:
 * To clear the text, click on the address bar and press Enter.
 * This is a minimal implementation in Python using Flask.
 * Project can be built using other IDE or command line.
+
+### TODO
+* Fix Python not retrieving environment variable added after creating Python venv.

@@ -5,9 +5,10 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import Response, render_template, jsonify, session
 from FlaskWebsite import app
-from runserver import CONFIG_OPTIONS
 import os
 import requests
+
+from settings import ConfigOptions
 
 @app.route('/')
 @app.route('/home')
@@ -44,7 +45,7 @@ def get_token():
     """Retrieve ephemeral session token from OpenAI."""
 
     headers = {
-        'Authorization': f'Bearer {CONFIG_OPTIONS.OPENAI_API_KEY}',
+        'Authorization': f'Bearer {ConfigOptions.OPENAI_API_KEY}',
         'Content-Type': 'application/json'
     }
     payload = {
